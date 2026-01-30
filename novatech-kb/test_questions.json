@@ -1,0 +1,221 @@
+{
+  "test_questions": [
+    {
+      "id": "Q001",
+      "question": "An employee wants to take 3 months off to care for a seriously ill parent. What leave options are available and how should they be combined?",
+      "difficulty": "hard",
+      "category": "hr",
+      "ground_truth_answer": "The employee should use: 1) FMLA leave (up to 12 weeks job-protected, unpaid), 2) Sick leave for family care (5 days can be used for caring for family), 3) Annual leave can be used concurrently with FMLA, 4) Unpaid leave policy provides up to 12 weeks for caregiver leave. They should coordinate with HR to determine the optimal combination that provides job protection while maximizing paid time.",
+      "source_documents": [
+        "hr/leave/fmla_policy.md.pdf",
+        "hr/leave/sick_leave_policy.md.pdf",
+        "hr/leave/unpaid_leave_policy.md.pdf"
+      ],
+      "relevant_sections": [
+        "Qualifying Reasons",
+        "Sick Leave for Family Care",
+        "Types of Unpaid Leave > Caregiver Leave"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q002",
+      "question": "What are all the steps needed to set up a complete CI/CD pipeline with DevPipeline that builds, tests, and deploys to CloudForge with secret injection from SecureVault?",
+      "difficulty": "hard",
+      "category": "product",
+      "ground_truth_answer": "1) Create .devpipeline.yaml with triggers for push/PR, 2) Define build stage to install dependencies and build, 3) Define test stage to run tests, 4) Use securevault/fetch action to retrieve secrets, 5) Define deploy stage with condition (when: branch == 'main'), 6) Use cloudforge/deploy action with project and environment specified. Secrets from SecureVault are injected as environment variables.",
+      "source_documents": [
+        "products/devpipeline/quick_start_guide.md.pdf",
+        "products/securevault/setup_installation.md.pdf",
+        "products/cloudforge/getting_started_guide.md.pdf"
+      ],
+      "relevant_sections": [
+        "Quick Start",
+        "CloudForge Integration",
+        "Secrets Management"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q003",
+      "question": "An employee is relocating from Austin to London. What are all the HR and IT considerations they need to address?",
+      "difficulty": "hard",
+      "category": "hr",
+      "ground_truth_answer": "HR considerations: Contact HR before relocating for tax/legal implications, compensation may be adjusted (UK bands apply), transfer to UK employment entity, benefits transition (UK health system vs US health insurance, pension vs 401k), leave entitlements change (25 days + bank holidays vs US entitlement). IT considerations: May need region-appropriate device, keyboard layout may differ, email may move to novatech.co.uk domain, access to UK-specific systems. Additional: Relocation policy may apply, work authorization requirements.",
+      "source_documents": [
+        "hr/remote-work/remote_work_policy.md.pdf",
+        "hr/compensation/salary_bands_and_levels.md.pdf",
+        "hr/leave/annual_leave_policy.md.pdf",
+        "it/hardware/laptop_provisioning.md.pdf",
+        "faqs/remote_work_faqs.md.pdf"
+      ],
+      "relevant_sections": [
+        "Location Requirements",
+        "Geographic Differentials",
+        "United Kingdom",
+        "Relocating Internationally"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q004",
+      "question": "What happens if an employee exhausts all their paid leave options during a medical situation?",
+      "difficulty": "hard",
+      "category": "hr",
+      "ground_truth_answer": "Sequence of options: 1) Sick leave (10 days), 2) Short-term disability kicks in at day 11 (60% of salary, up to 90 days), 3) Long-term disability begins at day 91 (60% of salary to age 65), 4) FMLA provides 12 weeks job protection (runs concurrently), 5) Unpaid medical leave up to 12 weeks beyond FMLA, 6) ADA interactive process for additional leave as accommodation. Health insurance continues throughout with same employee contribution during paid leave; employee pays full premium during unpaid leave.",
+      "source_documents": [
+        "hr/leave/medical_leave_policy.md.pdf",
+        "hr/leave/fmla_policy.md.pdf",
+        "hr/leave/unpaid_leave_policy.md.pdf",
+        "hr/leave/sick_leave_policy.md.pdf"
+      ],
+      "relevant_sections": [
+        "Leave Entitlement",
+        "Relationship to Other Policies",
+        "Extended Illness",
+        "Sick Leave Entitlements"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q005",
+      "question": "How should an employee set up complete monitoring and alerting for their CloudForge application using DataLens?",
+      "difficulty": "hard",
+      "category": "product",
+      "ground_truth_answer": "1) CloudForge automatically sends metrics to DataLens, 2) Access DataLens dashboard for automatic CloudForge metrics, 3) Create custom dashboards with panels (time series, stats, gauges), 4) Write DQL queries for key metrics (rate(http_requests_total[5m]), error rate, P99 latency using histogram_quantile), 5) Set up alerting rules with conditions (e.g., error rate > 5% for 5 minutes), 6) Configure notification channels (Slack, PagerDuty, email), 7) Set up alert routing based on severity.",
+      "source_documents": [
+        "products/datalens/getting_started.md.pdf",
+        "products/cloudforge/getting_started_guide.md.pdf"
+      ],
+      "relevant_sections": [
+        "CloudForge Integration",
+        "Alerting",
+        "Query Language"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q006",
+      "question": "What are all the security measures that should be in place for a remote employee?",
+      "difficulty": "hard",
+      "category": "it",
+      "ground_truth_answer": "Device security: Full disk encryption (enabled by default), password login required, automatic updates enabled, CrowdStrike security software installed, Kolide compliance monitoring. Access: Strong passwords (12+ characters, 3 of 4 character types), MFA required on all accounts, use 1Password for credential management, VPN on public WiFi. Physical: Lock screen when away, don't leave laptop unattended, secure workspace from shoulder surfing. Reporting: Report lost/stolen devices immediately (remote wipe initiated), report phishing to phishing@novatech.com, report suspicious activity to security@novatech.com.",
+      "source_documents": [
+        "it/hardware/laptop_provisioning.md.pdf",
+        "it/account-access/password_requirements.md.pdf",
+        "it/security/phishing_reporting_process.md.pdf",
+        "hr/remote-work/remote_work_policy.md.pdf"
+      ],
+      "relevant_sections": [
+        "Laptop Security",
+        "Minimum Requirements",
+        "Security",
+        "Compliance"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q007",
+      "question": "What is the complete exit process when an employee resigns, including all HR, IT, and administrative steps?",
+      "difficulty": "hard",
+      "category": "hr",
+      "ground_truth_answer": "HR: Submit resignation to manager, HR initiates offboarding process, exit interview offered (optional), final paycheck timing per state law, unused accrued leave paid out (where legal). Benefits: COBRA information provided, 401k can be left/rolled over/cashed out, equity has 90 days to exercise vested options. IT: Accounts disabled on termination date, equipment return within 14 days using provided shipping label, laptop wiped and recycled/redeployed. Knowledge transfer: Complete handoff documentation, train backups on ongoing work.",
+      "source_documents": [
+        "hr/onboarding-offboarding/exit_interview_process.md.pdf",
+        "hr/compensation/equity_stock_options_guide.md.pdf",
+        "hr/compensation/401k_retirement_plan.md.pdf",
+        "it/hardware/laptop_provisioning.md.pdf",
+        "it/account-access/new_employee_account_setup.md.pdf"
+      ],
+      "relevant_sections": [
+        "Purpose",
+        "Vesting",
+        "Rollovers",
+        "Returning Equipment",
+        "New Hire Provisioning"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q008",
+      "question": "How many total paid days off does a US L4 employee get in their first year, combining all leave types?",
+      "difficulty": "medium",
+      "category": "hr",
+      "requires_calculation": true,
+      "ground_truth_answer": "L4 employees receive: 25 days annual leave + 10 days sick leave + 5 days family care sick leave + approximately 11 company holidays = 51 total paid days off. Note: Mental health days come from the sick leave allocation, bereavement leave is additional as-needed.",
+      "calculation_details": {
+        "annual_leave": 25,
+        "sick_leave": 10,
+        "family_care": 5,
+        "holidays": 11,
+        "total": 51
+      },
+      "source_documents": [
+        "hr/leave/annual_leave_policy.md.pdf",
+        "hr/leave/sick_leave_policy.md.pdf"
+      ],
+      "relevant_sections": [
+        "United States",
+        "Sick Leave Entitlements"
+      ],
+      "requires_synthesis": true,
+      "answerable": true
+    },
+    {
+      "id": "Q009",
+      "question": "If an L3 employee uses the full Learning & Development budget on a conference ($1,500 limit) and technical books, how much would they have left for professional journals?",
+      "difficulty": "easy",
+      "category": "hr",
+      "requires_calculation": true,
+      "ground_truth_answer": "Total L&D budget is $2,500. Conference limit is $1,500, technical books limit is $500. After using both fully ($2,000), they would have $500 remaining. However, professional journals have a separate $200 limit, so they could only spend $200 on journals regardless of remaining budget.",
+      "calculation_details": {
+        "total_budget": 2500,
+        "conference_used": 1500,
+        "books_used": 500,
+        "remaining": 500,
+        "journal_limit": 200,
+        "actual_available_for_journals": 200
+      },
+      "source_documents": [
+        "hr/career-development/learning_development_budget.md.pdf"
+      ],
+      "relevant_sections": [
+        "Eligible Expenses",
+        "Spending Limits"
+      ],
+      "requires_synthesis": false,
+      "answerable": true
+    },
+    {
+      "id": "Q010",
+      "question": "An employee chose the HDHP health plan. If they have a family and hit their out-of-pocket maximum, what is the total maximum they would pay in a year (premiums + out-of-pocket)?",
+      "difficulty": "medium",
+      "category": "hr",
+      "requires_calculation": true,
+      "ground_truth_answer": "HDHP family monthly premium (employee portion): $225/month = $2,700/year. Family out-of-pocket maximum: $14,100. Total maximum annual cost: $2,700 + $14,100 = $16,800.",
+      "calculation_details": {
+        "monthly_premium": 225,
+        "annual_premium": 2700,
+        "oop_max_family": 14100,
+        "total_max": 16800
+      },
+      "source_documents": [
+        "hr/compensation/health_insurance_us.md.pdf"
+      ],
+      "relevant_sections": [
+        "Plan Comparison",
+        "HDHP",
+        "Premium Costs"
+      ],
+      "requires_synthesis": false,
+      "answerable": true
+    }
+  ]
+}
