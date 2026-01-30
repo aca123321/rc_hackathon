@@ -23,16 +23,16 @@ Your challenge is to build an intelligent agent that can answer these questions 
 
 ### Knowledge Base
 
-A synthetic enterprise knowledge base containing **1,300 documents** (~2.2 million words):
+A synthetic enterprise knowledge base containing **194 documents**:
 
 | Document Type | Count | Description |
 |---------------|-------|-------------|
-| HR Policies | 150 | Leave, benefits, compensation, remote work, career development |
-| IT Procedures | 200 | Access management, hardware, software, security, support |
-| Product Documentation | 300 | Guides for NovaTech's four products |
-| Compliance Guidelines | 100 | Data privacy, security compliance, regulations |
-| Meeting Notes & Memos | 500 | All-hands notes, announcements, project updates |
-| FAQ Documents | 50 | Common questions across various topics |
+| HR Policies | 56 | Leave, benefits, compensation, remote work, career development |
+| IT Procedures | 39 | Access management, hardware, software, security, support |
+| Product Documentation | 45 | Guides for NovaTech's four products |
+| Compliance Guidelines | 19 | Data privacy, security compliance, regulations |
+| Communications | 20 | All-hands notes, announcements, project updates |
+| FAQ Documents | 15 | Common questions across various topics |
 
 ### Dataset Structure
 
@@ -44,7 +44,6 @@ novatech-kb/
 ├── compliance/
 ├── communications/
 ├── faqs/
-├── metadata.json
 └── test_questions.json
 ```
 
@@ -195,26 +194,6 @@ Judges will ask questions from the test set and some of their own. They'll evalu
 4. Pre-trained models and embeddings are allowed; fine-tuning is allowed if you have time
 5. The knowledge base cannot be modified, but you can preprocess and index it however you like
 6. No hardcoding answers to specific questions
-
----
-
-## Timeline
-
-| Milestone | Time |
-|-----------|------|
-| Kickoff & dataset release | 0:00 |
-| Check-in (optional Q&A) | +4:00 |
-| Submission deadline | +8:00 |
-| Demos & judging | +8:30 |
-| Winners announced | +10:00 |
-
----
-
-## Resources
-
-- **Dataset download:** [link]
-- **Slack channel:** #hackathon-support
-- **Submission form:** [link]
 
 ---
 
