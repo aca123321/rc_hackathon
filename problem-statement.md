@@ -197,6 +197,13 @@ Judges will ask questions from the test set and some of their own. They'll evalu
 
 ---
 
+## Helpful Resources
+
+- [Agno: Build Your First Agent](https://docs.agno.com/first-agent) — Quick guide to building a learning agent with OpenAI
+- [LangChain: Quickstart](https://docs.langchain.com/oss/python/langchain/quickstart) — Build a basic agent with tools and memory
+
+---
+
 ## FAQ
 
 **Q: Can we use a hosted vector database like Pinecone or Weaviate?**  
