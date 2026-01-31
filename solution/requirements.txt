@@ -1,0 +1,13 @@
+# PDF parsing - pdfplumber chosen for maximum correctness
+# Best table extraction (93.4% TEDS), surgical precision for structured data
+pdfplumber>=0.11.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# OpenAI API client
+openai>=1.0.0
+
+# PostgreSQL with vector support
+psycopg2-binary>=2.9.0
+pgvector>=0.2.0
