@@ -45,7 +45,9 @@ def _get_env_float(key: str, default: float) -> float:
 # =============================================================================
 OPENAI_API_KEY = _get_env("OPENAI_API_KEY")
 OPENAI_EMBEDDING_MODEL = _get_env("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small")
-OPENAI_CHAT_MODEL = _get_env("OPENAI_CHAT_MODEL", "gpt-5.2")
+OPENAI_CHAT_MODEL = _get_env(
+    "OPENAI_CHAT_MODEL", "gpt-5.2"
+)  # Default to gpt-4o for best balance
 
 # =============================================================================
 # PostgreSQL Database Configuration
@@ -70,7 +72,7 @@ DB_CONFIG = {
 DEFAULT_TOP_K = _get_env_int("DEFAULT_TOP_K", 10)
 MAX_CONVERSATION_HISTORY = _get_env_int("MAX_CONVERSATION_HISTORY", 6)
 MAX_CHUNKS_PER_SOURCE = _get_env_int("MAX_CHUNKS_PER_SOURCE", 2)
-SIMILARITY_THRESHOLD = _get_env_float("SIMILARITY_THRESHOLD", 0.3)
+SIMILARITY_THRESHOLD = _get_env_float("SIMILARITY_THRESHOLD", 0.05)
 
 # =============================================================================
 # Chunker Configuration

@@ -161,10 +161,7 @@
         "hr/leave/annual_leave_policy.md.pdf",
         "hr/leave/sick_leave_policy.md.pdf"
       ],
-      "relevant_sections": [
-        "United States",
-        "Sick Leave Entitlements"
-      ],
+      "relevant_sections": ["United States", "Sick Leave Entitlements"],
       "requires_synthesis": true,
       "answerable": true
     },
@@ -186,10 +183,7 @@
       "source_documents": [
         "hr/career-development/learning_development_budget.md.pdf"
       ],
-      "relevant_sections": [
-        "Eligible Expenses",
-        "Spending Limits"
-      ],
+      "relevant_sections": ["Eligible Expenses", "Spending Limits"],
       "requires_synthesis": false,
       "answerable": true
     },
@@ -206,14 +200,8 @@
         "oop_max_family": 14100,
         "total_max": 16800
       },
-      "source_documents": [
-        "hr/compensation/health_insurance_us.md.pdf"
-      ],
-      "relevant_sections": [
-        "Plan Comparison",
-        "HDHP",
-        "Premium Costs"
-      ],
+      "source_documents": ["hr/compensation/health_insurance_us.md.pdf"],
+      "relevant_sections": ["Plan Comparison", "HDHP", "Premium Costs"],
       "requires_synthesis": false,
       "answerable": true
     }

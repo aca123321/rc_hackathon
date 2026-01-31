@@ -11,3 +11,7 @@ openai>=1.0.0
 # PostgreSQL with vector support
 psycopg2-binary>=2.9.0
 pgvector>=0.2.0
+
+# FastAPI server
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0

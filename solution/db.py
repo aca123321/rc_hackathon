@@ -2,6 +2,7 @@
 Database connection and operations for the knowledge base.
 """
 
+from typing import Optional
 import psycopg2
 from pgvector.psycopg2 import register_vector
 from datetime import datetime
@@ -32,7 +33,7 @@ def insert_knowledge_base_entry(
     embedding: list[float],
     num_words: int,
     text_length: int,
-    source_file: str | None = None,
+    source_file: Optional[str] = None,
 ) -> int:
     """
     Insert a new entry into the knowledge_base table.
@@ -91,11 +92,13 @@ def get_knowledge_base_stats() -> dict:
 
     # Total entries
     cursor.execute("SELECT COUNT(*) FROM knowledge_base")
-    stats["total_entries"] = cursor.fetchone()[0]
+    result = cursor.fetchone()
+    stats["total_entries"] = result[0] if result else 0
 
     # Entries with valid embeddings
     cursor.execute("SELECT COUNT(*) FROM knowledge_base WHERE embedding IS NOT NULL")
-    stats["with_embeddings"] = cursor.fetchone()[0]
+    result = cursor.fetchone()
+    stats["with_embeddings"] = result[0] if result else 0
 
     # Check embedding dimension (sample)
     cursor.execute(

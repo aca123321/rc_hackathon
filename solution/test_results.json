@@ -1,7 +1,7 @@
 {
   "total_questions": 10,
-  "total_latency_ms": 88097.71084785461,
-  "avg_latency_ms": 8809.771084785461,
+  "total_latency_ms": 164888.22102546692,
+  "avg_latency_ms": 16488.822102546692,
   "confidence_distribution": {
     "high": 0,
     "medium": 7,
@@ -12,16 +12,16 @@
     {
       "id": "Q001",
       "question": "An employee wants to take 3 months off to care for a seriously ill parent. What leave options are available and how should they be combined?",
-      "answer": "To take 3 months off to care for a seriously ill parent, the employee can utilize the following leave options:\n\n1. **FMLA Leave**: \n   - The employee can take up to 12 workweeks of unpaid, job-protected leave under the Family and Medical Leave Act (FMLA) to care for a parent with a serious health condition. This leave is available to U.S. employees who have worked for NovaTech for at least 12 months and have worked at least 1,250 hours during the 12-month period immediately preceding the leave. The leave can be taken continuously or intermittently as needed [Document 6].\n\n2. **Sick Leave for Family Care**:\n   - The employee may use up to 5 days of sick leave per year to care for a sick family member, including parents. This can be used in conjunction with FMLA leave to provide some paid time off during the 3-month period [Document 5].\n\n3. **Additional Unpaid Leave**:\n   - If the employee needs more time beyond the 12 weeks provided by FMLA, they may discuss options for additional unpaid leave with HR. This could involve extending the leave period beyond the FMLA entitlement, subject to approval and any applicable local regulations [Document 4].\n\n**Steps to Combine Leave Options**:\n1. **Request FMLA Leave**:\n   - Submit a request for FMLA leave through Workday under \u201cLeave of Absence\u201d > \u201cFMLA\u201d and complete the necessary FMLA paperwork as soon as possible [Document 6].\n\n2. **Use Sick Leave**:\n   - Log sick leave in Workday for the days used to care for the parent, ensuring it is recorded within 3 days of returning to work [Document 5].\n\n3. **Discuss Additional Leave**:\n   - If additional unpaid leave is needed beyond the FMLA entitlement, contact HR to discuss options and ensure a smooth transition and coverage plan during the extended leave period [Document 4].\n\nBy combining these options, the employee can effectively manage the 3-month leave period to care for their seriously ill parent.\n\n---\n**source_documents:**\n- hr/leave/fmla_policy.md.pdf\n- hr/leave/sick_leave_policy.md.pdf\n- hr/leave/parental_leave_policy.md.pdf\n\n**relevant_sections:**\n- Qualifying Reasons\n- Sick Leave for Family Care\n- Additional Unpaid Leave",
+      "answer": "To take 3 months off to care for a seriously ill parent, the employee can utilize the following leave options:\n\n1. **FMLA Leave**: \n   - The employee can take up to 12 workweeks of unpaid, job-protected leave under the Family and Medical Leave Act (FMLA) to care for a parent with a serious health condition. This leave is available to U.S. employees who have worked for NovaTech for at least 12 months and have worked at least 1,250 hours during the 12-month period immediately preceding the leave. The leave can be taken continuously or intermittently as needed [Document 6, hr/leave/fmla_policy.md.pdf, Eligibility and Leave Entitlement].\n\n2. **Sick Leave for Family Care**:\n   - The employee may use up to 5 days of sick leave per year to care for a sick dependent, which includes parents. This can be used in conjunction with FMLA leave to cover part of the 3-month period [Document 5, hr/leave/sick_leave_policy.md.pdf, Sick Leave for Family Care].\n\n3. **Additional Unpaid Leave**:\n   - If the employee requires more than the 12 weeks provided by FMLA, they may discuss options for additional unpaid leave with HR. This could involve extending the leave beyond the FMLA entitlement, subject to approval and any applicable local regulations [Document 4, hr/leave/parental_leave_policy.md.pdf, Additional Unpaid Leave].\n\nTo combine these options effectively:\n- The employee should first apply for FMLA leave through Workday, providing the necessary medical certification for their parent's serious health condition.\n- They can use their available sick leave days for family care at the beginning or end of the FMLA leave period to extend the total time off.\n- If additional time is needed beyond the FMLA entitlement, the employee should contact HR to discuss the possibility of additional unpaid leave.\n\n---\n**source_documents:**\n- hr/leave/fmla_policy.md.pdf\n- hr/leave/sick_leave_policy.md.pdf\n- hr/leave/parental_leave_policy.md.pdf\n\n**relevant_sections:**\n- Eligibility and Leave Entitlement (FMLA Policy)\n- Sick Leave for Family Care (Sick Leave Policy)\n- Additional Unpaid Leave (Parental Leave Policy)",
       "source_documents": [
         "hr/leave/fmla_policy.md.pdf",
         "hr/leave/sick_leave_policy.md.pdf",
         "hr/leave/parental_leave_policy.md.pdf"
       ],
       "relevant_sections": [
-        "Qualifying Reasons",
-        "Sick Leave for Family Care",
-        "Additional Unpaid Leave"
+        "Eligibility and Leave Entitlement (FMLA Policy)",
+        "Sick Leave for Family Care (Sick Leave Policy)",
+        "Additional Unpaid Leave (Parental Leave Policy)"
       ],
       "expected_sources": [
         "hr/leave/fmla_policy.md.pdf",
@@ -35,14 +35,14 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "medium",
-      "latency_ms": 9910.534143447876,
+      "latency_ms": 16072.40605354309,
       "difficulty": "hard",
       "category": "hr"
     },
     {
       "id": "Q002",
       "question": "What are all the steps needed to set up a complete CI/CD pipeline with DevPipeline that builds, tests, and deploys to CloudForge with secret injection from SecureVault?",
-      "answer": "To set up a complete CI/CD pipeline with DevPipeline that builds, tests, and deploys to CloudForge with secret injection from SecureVault, follow these steps:\n\n1. **Account Setup**\n   - Create or connect your NovaTech account by visiting devpipeline.novatech.com and signing in or starting a free trial. Enable two-factor authentication for security. [Document 5]\n\n2. **Connect Your Git Repository**\n   - Go to Settings \u2192 Integrations \u2192 Git Providers in DevPipeline.\n   - Connect your Git provider (GitHub, GitLab, Bitbucket, or Azure DevOps) and authorize the DevPipeline app. Select the repositories you want to connect. [Document 5]\n\n3. **Create Your First Pipeline**\n   - Option 1: Auto-Detection\n     - Click New Pipeline, select your repository, and accept the suggested pipeline configuration.\n   - Option 2: Manual Configuration\n     - Add a `.devpipeline.yaml` file to your repository with the necessary stages for build, test, and deploy. [Document 5]\n\n4. **Define Pipeline Stages**\n   - **Build Stage**: Install dependencies and build your application.\n   - **Test Stage**: Run unit and integration tests. Use parallel execution to speed up the process.\n   - **Deploy Stage**: Deploy to CloudForge. [Document 1, Document 7]\n\n5. **Integrate with CloudForge**\n   - Ensure your pipeline includes a stage for deploying to CloudForge. Use the `cloudforge/deploy@v2` action in your pipeline configuration. [Document 1, Document 4]\n\n6. **Secret Management with SecureVault**\n   - Add secrets to SecureVault by going to Settings \u2192 Secrets in DevPipeline.\n   - Use the `securevault/fetch@v1` action in your pipeline to fetch secrets during deployment. [Document 3, Document 4]\n\n7. **Configure Environment Variables and Secrets**\n   - Define environment variables and reference secrets in your pipeline configuration. Use the `env` and `secrets` keys in your `.devpipeline.yaml` file. [Document 1, Document 3]\n\n8. **Run Your First Build**\n   - Trigger the pipeline manually or automatically on push to configured branches or pull request creation.\n   - Monitor the build progress and logs in real-time. [Document 5]\n\n9. **Set Up Notifications**\n   - Configure notifications for build success or failure via Slack or email. [Document 1]\n\n10. **Approval Workflow for Production Deployment**\n    - For production deployments, set up an approval workflow where an approver reviews changes before deployment proceeds. [Document 3]\n\n11. **Security Scanning**\n    - Implement security scanning in your pipeline to check for vulnerabilities and secrets. Use tools like SAST, dependency scanning, and secret scanning. [Document 7]\n\nBy following these steps, you can set up a comprehensive CI/CD pipeline using DevPipeline that integrates with CloudForge and SecureVault for secret management.\n\n---\n**source_documents:**\n- products/devpipeline/quick_start_guide.md.pdf\n- products/devpipeline/getting_started.md.pdf\n- products/cloudforge/getting_started.md.pdf\n- products/devpipeline/ci_cd_best_practices.md.pdf\n\n**relevant_sections:**\n- Quick Start\n- Account Setup\n- Connect Your Repository\n- Create Your First Pipeline\n- Define Pipeline Stages\n- Integrate with CloudForge\n- Secret Management with SecureVault\n- Configure Environment Variables and Secrets\n- Run Your First Build\n- Set Up Notifications\n- Approval Workflow for Production Deployment\n- Security Scanning",
+      "answer": "To set up a complete CI/CD pipeline with DevPipeline that builds, tests, and deploys to CloudForge with secret injection from SecureVault, follow these steps:\n\n1. **Account and Repository Setup**\n   - Create or connect your NovaTech account by visiting `devpipeline.novatech.com` and signing in or starting a free trial.\n   - Connect your Git repository by going to Settings \u2192 Integrations \u2192 Git Providers, and authorize DevPipeline to access your repositories (GitHub, GitLab, Bitbucket, or Azure DevOps) [Document 5, Step 1 & 2].\n\n2. **Create Your First Pipeline**\n   - Option 1: Auto-Detection\n     1. Click \"New Pipeline\" and select your repository.\n     2. DevPipeline will analyze your code and suggest a pipeline configuration.\n     3. Accept the suggested configuration and click \"Create Pipeline\".\n   - Option 2: Manual Configuration\n     1. Click \"New Pipeline\" and select your repository.\n     2. Click \"Manual Configuration\" and add a `.devpipeline.yaml` file to your repository with the necessary stages for build, test, and deploy [Document 5, Step 3].\n\n3. **Pipeline Configuration**\n   - Define the pipeline stages in `.devpipeline.yaml`:\n     ```yaml\n     name: my-app-pipeline\n     trigger:\n       branches: [main, develop]\n       pull_request: true\n     stages:\n       - name: build\n         steps:\n           - name: Install dependencies\n             run: npm install\n           - name: Run tests\n             run: npm test\n           - name: Build\n             run: npm run build\n       - name: deploy\n         when: branch == \"main\"\n         steps:\n           - name: Deploy to CloudForge\n             uses: cloudforge/deploy@v2\n             with:\n               environment: production\n     ```\n   - Ensure the pipeline includes secret injection from SecureVault:\n     ```yaml\n     steps:\n       - name: Get secrets from SecureVault\n         uses: securevault/get-secrets\n         with:\n           path: secret/data/myapp\n     ``` [Document 1, Step 2; Document 3, Secrets Management].\n\n4. **Deploy to CloudForge**\n   - Configure deployment to CloudForge by integrating CloudForge with DevPipeline:\n     - Use the `cloudforge/deploy@v2` action in your pipeline to deploy to the desired environment (e.g., production) [Document 1, Step 2; Document 4, Step 4].\n\n5. **Run Your First Build**\n   - Trigger the pipeline manually or automatically by pushing changes to the configured branches.\n   - Monitor the build progress and logs in real-time through the DevPipeline dashboard [Document 5, Step 4].\n\n6. **Set Up Notifications**\n   - Configure notifications for build and deployment status via Slack or email to keep your team informed [Document 1, Notifications].\n\n7. **Security and Best Practices**\n   - Implement security scanning and best practices as outlined in the CI/CD Best Practices document to ensure a secure and efficient pipeline [Document 7, Security Scanning].\n\nBy following these steps, you will have a complete CI/CD pipeline set up with DevPipeline that builds, tests, and deploys to CloudForge, with secrets managed through SecureVault.\n\n---\n**source_documents:**\n- products/devpipeline/quick_start_guide.md.pdf\n- products/devpipeline/getting_started.md.pdf\n- products/cloudforge/getting_started.md.pdf\n- products/devpipeline/ci_cd_best_practices.md.pdf\n\n**relevant_sections:**\n- Quick Start (5 Minutes)\n- Step 1: Account Setup\n- Step 2: Connect Your Repository\n- Step 3: Create Your First Pipeline\n- Deploy to Environment\n- Secrets Management\n- Security Scanning",
       "source_documents": [
         "products/devpipeline/quick_start_guide.md.pdf",
         "products/devpipeline/getting_started.md.pdf",
@@ -50,17 +50,12 @@
         "products/devpipeline/ci_cd_best_practices.md.pdf"
       ],
       "relevant_sections": [
-        "Quick Start",
-        "Account Setup",
-        "Connect Your Repository",
-        "Create Your First Pipeline",
-        "Define Pipeline Stages",
-        "Integrate with CloudForge",
-        "Secret Management with SecureVault",
-        "Configure Environment Variables and Secrets",
-        "Run Your First Build",
-        "Set Up Notifications",
-        "Approval Workflow for Production Deployment",
+        "Quick Start (5 Minutes)",
+        "Step 1: Account Setup",
+        "Step 2: Connect Your Repository",
+        "Step 3: Create Your First Pipeline",
+        "Deploy to Environment",
+        "Secrets Management",
         "Security Scanning"
       ],
       "expected_sources": [
@@ -75,24 +70,27 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "medium",
-      "latency_ms": 11764.988899230957,
+      "latency_ms": 17034.518003463745,
       "difficulty": "hard",
       "category": "product"
     },
     {
       "id": "Q003",
       "question": "An employee is relocating from Austin to London. What are all the HR and IT considerations they need to address?",
-      "answer": "When an employee is relocating from Austin to London, there are several HR and IT considerations they need to address:\n\n### HR Considerations\n\n1. **Contact HR Before Relocating:**\n   - The employee should contact HR to discuss the relocation as it may have tax, legal, and compensation implications. [faqs/remote_work_faqs.md.pdf]\n\n2. **Compensation Adjustment:**\n   - The employee's compensation might be adjusted based on the cost of living in London compared to Austin. [faqs/remote_work_faqs.md.pdf]\n\n3. **Tax Implications:**\n   - The employee is responsible for understanding their personal tax obligations. NovaTech will comply with corporate tax obligations, but extended stays may trigger tax residence changes. [hr/remote-work/international_remote_work.md.pdf]\n\n4. **Legal Compliance:**\n   - The employee must ensure they have the legal right to work in the UK, including any necessary visas. [hr/remote-work/international_remote_work.md.pdf]\n\n5. **International Remote Work Policy:**\n   - The employee should review the International Remote Work Policy to understand the requirements and limitations for working outside their home country. [hr/remote-work/international_remote_work.md.pdf]\n\n### IT Considerations\n\n1. **Equipment:**\n   - The employee should ensure that their equipment is encrypted and consider travel insurance for the equipment. They should also contact IT if they need to swap for a region-appropriate device due to differences like keyboard layouts. [it/hardware/laptop_provisioning.md.pdf]\n\n2. **VPN and Security:**\n   - The employee must use a VPN at all times, especially when using public WiFi, and follow all security policies to avoid accessing highly sensitive systems from unsecured locations. [hr/remote-work/international_remote_work.md.pdf]\n\n3. **Connectivity:**\n   - Ensure reliable internet connectivity in London and have a backup connectivity plan. [hr/remote-work/international_remote_work.md.pdf]\n\n4. **Data Privacy Compliance:**\n   - The employee must ensure compliance with local data privacy laws and use company-approved tools only. [hr/remote-work/international_remote_work.md.pdf]\n\nBy addressing these considerations, the employee can ensure a smooth transition from Austin to London while complying with NovaTech's policies and procedures.\n\n---\n**source_documents:**\n- faqs/remote_work_faqs.md.pdf\n- hr/remote-work/international_remote_work.md.pdf\n- it/hardware/laptop_provisioning.md.pdf\n\n**relevant_sections:**\n- Taxes & Legal\n- Compensation and Benefits\n- Equipment\n- Security",
+      "answer": "When an employee is relocating from Austin to London, there are several HR and IT considerations they need to address:\n\n### HR Considerations:\n1. **Contact HR Before Relocating**: The employee should contact HR to discuss the relocation, as moving to a different country may have tax, legal, and compensation implications. HR will work with the employee to understand the options ([Document 2](faqs/remote_work_faqs.md.pdf), Relocation Policy).\n\n2. **Compensation Adjustment**: The employee's compensation may be adjusted based on the cost of living in London compared to Austin. It's important to contact HR to understand these implications before relocating ([Document 2](faqs/remote_work_faqs.md.pdf), Compensation Changes).\n\n3. **Tax Implications**: The employee is responsible for taxes based on their residence. NovaTech withholds taxes based on the designated location. If relocating, the employee must notify HR immediately so that tax withholding can be adjusted accordingly ([Document 8](faqs/remote_work_faqs.md.pdf), Taxes & Legal).\n\n4. **International Remote Work Policy**: The employee should review the International Remote Work Policy to understand the requirements and limitations for working outside their home country. This includes maintaining core hours overlap with their team and complying with local data laws ([Document 4](hr/remote-work/international_remote_work.md.pdf), International Remote Work Policy).\n\n### IT Considerations:\n1. **Equipment and Connectivity**: The employee should ensure that their equipment is encrypted and consider travel insurance for their equipment. They should also have a backup connectivity plan and ensure reliable internet access in London ([Document 3](hr/remote-work/international_remote_work.md.pdf), Equipment and Connectivity).\n\n2. **VPN and Security**: The employee must use a VPN at all times, especially when using public WiFi, and follow all security policies to avoid accessing highly sensitive systems from unsecured locations ([Document 3](hr/remote-work/international_remote_work.md.pdf), Security).\n\n3. **IT Support**: The employee should contact IT to discuss any necessary adjustments for their equipment, such as swapping for a region-appropriate device or addressing any keyboard layout differences ([Document 7](it/hardware/laptop_provisioning.md.pdf), International Considerations).\n\nBy addressing these considerations, the employee can ensure a smooth transition from Austin to London while complying with NovaTech's policies and maintaining effective work practices.\n\n---\n**source_documents:**\n- faqs/remote_work_faqs.md.pdf\n- hr/remote-work/international_remote_work.md.pdf\n- it/hardware/laptop_provisioning.md.pdf\n\n**relevant_sections:**\n- Relocation Policy\n- Compensation Changes\n- Taxes & Legal\n- International Remote Work Policy\n- Equipment and Connectivity\n- Security\n- International Considerations",
       "source_documents": [
         "faqs/remote_work_faqs.md.pdf",
         "hr/remote-work/international_remote_work.md.pdf",
         "it/hardware/laptop_provisioning.md.pdf"
       ],
       "relevant_sections": [
+        "Relocation Policy",
+        "Compensation Changes",
         "Taxes & Legal",
-        "Compensation and Benefits",
-        "Equipment",
-        "Security"
+        "International Remote Work Policy",
+        "Equipment and Connectivity",
+        "Security",
+        "International Considerations"
       ],
       "expected_sources": [
         "hr/remote-work/remote_work_policy.md.pdf",
@@ -109,24 +107,23 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "low",
-      "latency_ms": 7702.390909194946,
+      "latency_ms": 17833.84084701538,
       "difficulty": "hard",
       "category": "hr"
     },
     {
       "id": "Q004",
       "question": "What happens if an employee exhausts all their paid leave options during a medical situation?",
-      "answer": "If an employee exhausts all their paid leave options during a medical situation, the following options are available:\n\n1. **Unpaid Medical Leave**: \n   - Employees can take up to 12 weeks of unpaid medical leave per rolling 12-month period if they have exhausted their sick leave and are not eligible for disability benefits. This leave is protected under the Family and Medical Leave Act (FMLA) for eligible U.S. employees, which means their position is protected during this time [Document 1, hr/leave/medical_leave_policy.md.pdf].\n\n2. **Extended Medical Leave**:\n   - If the employee has exhausted paid sick leave and short-term disability, they may qualify for extended medical leave, which can last as medically necessary, up to 12 weeks. Medical documentation is required, and approval is coordinated with HR and the disability provider [Document 4, hr/leave/unpaid_leave_policy.md.pdf].\n\n3. **FMLA Leave**:\n   - FMLA provides unpaid leave, and employees may use accrued paid leave concurrently with FMLA leave. If the employee's situation qualifies under FMLA, they can take leave with job protection, and health insurance coverage continues under the same terms as if they were working [Document 5, hr/leave/fmla_policy.md.pdf].\n\n4. **ADA Accommodations**:\n   - If FMLA leave is exhausted, employees may be entitled to additional leave as an accommodation under the Americans with Disabilities Act (ADA) [Document 8, hr/leave/fmla_policy.md.pdf].\n\nDuring unpaid leave, employees must pay the full premium for health insurance to maintain coverage, and other benefits such as 401(k) contributions and equity vesting may pause [Document 4, hr/leave/unpaid_leave_policy.md.pdf].\n\n---\n**source_documents:**\n- hr/leave/medical_leave_policy.md.pdf\n- hr/leave/unpaid_leave_policy.md.pdf\n- hr/leave/fmla_policy.md.pdf\n\n**relevant_sections:**\n- Unpaid Medical Leave\n- Extended Medical Leave\n- FMLA Leave\n- ADA Accommodations",
+      "answer": "If an employee exhausts all their paid leave options during a medical situation, they may be eligible for unpaid medical leave. Here are the steps and conditions involved:\n\n1. **Unpaid Medical Leave**: \n   - If sick leave is exhausted and the employee is not eligible for disability benefits, they can take up to 12 weeks of unpaid medical leave per rolling 12-month period. This is subject to FMLA protections for eligible U.S. employees [Document 1, Medical Leave Policy].\n\n2. **FMLA Protections**:\n   - For U.S. employees, if they meet the eligibility criteria, FMLA provides job protection for up to 12 weeks. During this time, health insurance coverage continues under the same terms as if the employee were working, but the employee must continue to pay their share of the premiums [Document 5, FMLA Policy].\n\n3. **Extended Medical Leave**:\n   - If the situation requires leave beyond the paid sick leave and short-term disability, employees can apply for extended medical leave, which is unpaid. This requires medical documentation and HR approval, in coordination with the disability provider [Document 4, Unpaid Leave Policy].\n\n4. **Benefits During Unpaid Leave**:\n   - During unpaid leave, health insurance continues, but the employee must pay the full premium. Other benefits like dental/vision insurance also continue under the same condition. Life insurance is company-paid, but equity vesting and 401(k) contributions pause [Document 4, Unpaid Leave Policy].\n\n5. **Position Guarantee**:\n   - For leaves of 4 weeks or less, the same position is guaranteed upon return. For leaves of 4-12 weeks, the same or a comparable position is guaranteed. For leaves over 12 weeks, the company will make best efforts to provide a comparable position, but there is no guarantee [Document 4, Unpaid Leave Policy].\n\n6. **Communication and Return Process**:\n   - Employees are expected to check in with HR monthly and update them on any changes to the return date. They should provide at least 2 weeks' notice of their return when possible [Document 4, Unpaid Leave Policy].\n\n---\n\n**source_documents:**\n- hr/leave/medical_leave_policy.md.pdf\n- hr/leave/unpaid_leave_policy.md.pdf\n- hr/leave/fmla_policy.md.pdf\n\n**relevant_sections:**\n- Medical Leave Policy\n- Unpaid Leave Policy\n- FMLA Policy",
       "source_documents": [
         "hr/leave/medical_leave_policy.md.pdf",
         "hr/leave/unpaid_leave_policy.md.pdf",
         "hr/leave/fmla_policy.md.pdf"
       ],
       "relevant_sections": [
-        "Unpaid Medical Leave",
-        "Extended Medical Leave",
-        "FMLA Leave",
-        "ADA Accommodations"
+        "Medical Leave Policy",
+        "Unpaid Leave Policy",
+        "FMLA Policy"
       ],
       "expected_sources": [
         "hr/leave/medical_leave_policy.md.pdf",
@@ -142,23 +139,24 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "medium",
-      "latency_ms": 7961.819887161255,
+      "latency_ms": 15784.881830215454,
       "difficulty": "hard",
       "category": "hr"
     },
     {
       "id": "Q005",
       "question": "How should an employee set up complete monitoring and alerting for their CloudForge application using DataLens?",
-      "answer": "To set up complete monitoring and alerting for a CloudForge application using DataLens, an employee should follow these steps:\n\n### Monitoring Setup\n\n1. **Enable DataLens Integration in CloudForge:**\n   - Ensure that DataLens integration is enabled in your CloudForge environment. This can be done by configuring the `environment.yaml` file with the following settings:\n     ```yaml\n     monitoring:\n       datalens:\n         enabled: true\n         workspace: production\n         metrics: enabled: true\n         retention: 15d\n         logs: enabled: true\n         retention: 7d\n         traces: enabled: true\n         sampling_rate: 0.1\n     ```\n   - This setup will automatically collect metrics, logs, and traces from your CloudForge application and send them to DataLens for analysis and visualization [Document 1].\n\n2. **Access DataLens:**\n   - Go to `app.datalens.io` and sign in with your NovaTech account.\n   - Select or create your workspace to view the collected data [Document 2].\n\n3. **View Dashboards:**\n   - Once integration is enabled, CloudForge automatically creates dashboards in DataLens:\n     - **Environment Overview**: Health status and resource usage.\n     - **Service Performance**: Request rates, latency, and errors.\n     - **Database Monitoring**: Connections, queries, and performance.\n     - **Cost Analysis**: Spend breakdown and trends [Document 1].\n\n### Alerting Setup\n\n1. **Create Alerts in DataLens:**\n   - Open your dashboard in DataLens.\n   - Click on the panel title you want to set an alert for and select \"Edit.\"\n   - Go to the \"Alert\" tab and click \"Create Alert\" [Document 4].\n\n2. **Configure Alert Conditions:**\n   - Define the alert conditions based on your monitoring needs. For example, you can set threshold alerts for metrics like error rate or response time:\n     - **High Error Rate**: Trigger when the error rate exceeds a certain percentage.\n     - **High Latency**: Trigger when response time exceeds a specified threshold [Document 4].\n\n3. **Set Notification Channels:**\n   - Configure notification channels to receive alerts. Options include Slack, Email, PagerDuty, and Microsoft Teams. For example, to set up Slack notifications:\n     - Go to Settings \u2192 Notification Channels.\n     - Click Add Channel \u2192 Slack.\n     - Select the workspace and channel for notifications [Document 4].\n\n4. **Review and Test Alerts:**\n   - Regularly review and test your alerts to ensure they are configured correctly and firing as expected. Use the \"Test Integration\" feature in DataLens to verify alert functionality [Document 5].\n\nBy following these steps, an employee can effectively set up comprehensive monitoring and alerting for their CloudForge application using DataLens.\n\n---\n**source_documents:**\n- products/cloudforge/monitoring_integration.md.pdf\n- products/datalens/getting_started.md.pdf\n- products/datalens/alerting_guide.md.pdf\n\n**relevant_sections:**\n- DataLens Integration\n- Quick Start\n- Creating Alerts From a Panel",
+      "answer": "To set up complete monitoring and alerting for a CloudForge application using DataLens, follow these steps:\n\n### Monitoring Setup\n\n1. **Enable DataLens Integration in CloudForge:**\n   - Ensure that DataLens integration is enabled in your CloudForge environment by configuring the `environment.yaml` file:\n     ```yaml\n     monitoring:\n       datalens:\n         enabled: true\n         workspace: production\n         metrics: enabled: true\n         retention: 15d\n         logs: enabled: true\n         retention: 7d\n         traces: enabled: true\n         sampling_rate: 0.1\n     ```\n   - This setup will automatically collect metrics, logs, and traces from your CloudForge application and send them to DataLens for analysis and visualization [Document 1].\n\n2. **Access DataLens:**\n   - Go to `app.datalens.io` and sign in with your NovaTech account.\n   - Select or create your workspace to start viewing the collected data [Document 2].\n\n3. **View Dashboards:**\n   - Once integration is enabled, CloudForge automatically creates several dashboards in DataLens:\n     - Environment Overview: Health status and resource usage\n     - Service Performance: Request rates, latency, errors\n     - Database Monitoring: Connections, queries, performance\n     - Cost Analysis: Spend breakdown and trends [Document 1].\n\n### Alerting Setup\n\n1. **Create Alerts in DataLens:**\n   - Open your dashboard in DataLens.\n   - Click on the panel title you wish to monitor and select \"Edit.\"\n   - Go to the \"Alert\" tab and click \"Create Alert\" [Document 4].\n\n2. **Configure Alert Conditions:**\n   - Define the alert conditions based on your monitoring needs. For example:\n     - **Threshold Alerts:** Trigger when a metric crosses a defined threshold (e.g., error rate exceeds 5%).\n     - **Anomaly Alerts:** Trigger when a metric deviates from expected patterns.\n     - **No Data Alerts:** Trigger when expected data stops arriving [Document 4].\n\n3. **Set Notification Channels:**\n   - Configure notification channels such as Slack, Email, or PagerDuty to receive alerts:\n     - For Slack: Add the channel in DataLens settings and test the integration.\n     - For Email: Enter the email addresses and configure the template if needed.\n     - For PagerDuty: Enter the integration key and configure severity mapping [Document 4].\n\n4. **Review and Tune Alerts:**\n   - Regularly review alert configurations to ensure they are meaningful and avoid alert fatigue. Adjust thresholds and conditions as necessary [Document 3].\n\nBy following these steps, an employee can effectively set up comprehensive monitoring and alerting for their CloudForge application using DataLens.\n\n---\n**source_documents:**\n- products/cloudforge/monitoring_integration.md.pdf\n- products/datalens/getting_started.md.pdf\n- products/datalens/alerting_guide.md.pdf\n\n**relevant_sections:**\n- Built-in Monitoring\n- DataLens Integration\n- Creating Alerts From a Panel\n- Alert Configuration",
       "source_documents": [
         "products/cloudforge/monitoring_integration.md.pdf",
         "products/datalens/getting_started.md.pdf",
         "products/datalens/alerting_guide.md.pdf"
       ],
       "relevant_sections": [
+        "Built-in Monitoring",
         "DataLens Integration",
-        "Quick Start",
-        "Creating Alerts From a Panel"
+        "Creating Alerts From a Panel",
+        "Alert Configuration"
       ],
       "expected_sources": [
         "products/datalens/getting_started.md.pdf",
@@ -171,23 +169,25 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "medium",
-      "latency_ms": 13518.862962722778,
+      "latency_ms": 18433.04967880249,
       "difficulty": "hard",
       "category": "product"
     },
     {
       "id": "Q006",
       "question": "What are all the security measures that should be in place for a remote employee?",
-      "answer": "For a remote employee at NovaTech, the following security measures should be in place:\n\n1. **Network Security:**\n   - Use a VPN when on public WiFi and for sensitive work. It is optional but recommended on home networks (faqs/remote_work_faqs.md.pdf, it/security/security_best_practices.md.pdf).\n   - Secure your home network by changing default passwords and using a strong WiFi password (WPA3 preferred) (it/security/acceptable_use_policy.md.pdf, it/security/security_best_practices.md.pdf).\n\n2. **Device Security:**\n   - Keep work devices physically secure and do not allow others to use them (it/security/acceptable_use_policy.md.pdf).\n   - Enable encryption (FileVault for Mac or BitLocker for Windows) and set up a screen lock for inactivity (it/security/security_best_practices.md.pdf).\n   - Keep software updated and install updates promptly (it/security/acceptable_use_policy.md.pdf, it/security/security_best_practices.md.pdf).\n\n3. **Password Security:**\n   - Use strong passwords with a minimum of 16 characters, including a mix of uppercase, lowercase, numbers, and symbols (it/security/security_best_practices.md.pdf).\n   - Use a password manager like 1Password to generate and store passwords (it/security/security_best_practices.md.pdf).\n\n4. **Multi-Factor Authentication (MFA):**\n   - Enable MFA for all NovaTech applications, AWS Console, GitHub, VPN, and financial systems (it/security/security_best_practices.md.pdf).\n\n5. **Public Spaces:**\n   - Use a privacy screen and be aware of surroundings on video calls. Do not discuss confidential matters audibly (it/security/acceptable_use_policy.md.pdf).\n   - Keep devices with you at all times and avoid sensitive work in public (it/security/acceptable_use_policy.md.pdf, it/security/security_best_practices.md.pdf).\n\n6. **Data Protection:**\n   - Handle data according to its classification and ensure confidential data is encrypted (it/security/acceptable_use_policy.md.pdf).\n\n7. **Reporting Security Incidents:**\n   - Report lost or stolen devices, suspected security incidents, phishing attempts, and unauthorized access immediately to IT Security (it/security/acceptable_use_policy.md.pdf).\n\nThese measures are designed to protect both the employee and NovaTech's data and systems while working remotely.\n\n---\n**source_documents:**\n- faqs/remote_work_faqs.md.pdf\n- it/security/acceptable_use_policy.md.pdf\n- it/security/security_best_practices.md.pdf\n\n**relevant_sections:**\n- Security\n- Remote Work Security Requirements\n- Security Best Practices for Employees",
+      "answer": "For remote employees at NovaTech, several security measures are recommended to ensure data protection and compliance with company policies:\n\n1. **Network Security:**\n   - Use a VPN when on public WiFi (e.g., coffee shops, airports) and for accessing sensitive systems. It is optional but recommended on home networks ([Document 2](faqs/remote_work_faqs.md.pdf), [Document 7](it/security/security_best_practices.md.pdf)).\n   - Secure your home network by changing default passwords and using a strong WiFi password (WPA3 preferred) ([Document 4](it/security/acceptable_use_policy.md.pdf), [Document 7](it/security/security_best_practices.md.pdf)).\n\n2. **Device Security:**\n   - Lock your computer when away and use a password on your device ([Document 2](faqs/remote_work_faqs.md.pdf)).\n   - Enable encryption (FileVault for Mac or BitLocker for Windows) and set up screen lock for inactivity ([Document 7](it/security/security_best_practices.md.pdf)).\n   - Keep work devices physically secure and do not allow others to use them ([Document 4](it/security/acceptable_use_policy.md.pdf)).\n\n3. **Password and Authentication:**\n   - Use strong passwords (minimum 16 characters, mix of character types) and a password manager like 1Password ([Document 7](it/security/security_best_practices.md.pdf)).\n   - Enable Multi-Factor Authentication (MFA) for all critical systems, using methods like hardware keys or authenticator apps ([Document 7](it/security/security_best_practices.md.pdf)).\n\n4. **Data Handling:**\n   - Secure physical documents and avoid discussing confidential information in public ([Document 1](hr/remote-work/remote_work_policy.md.pdf)).\n   - Follow data classification guidelines and ensure sensitive data is encrypted and handled appropriately ([Document 6](it/security/acceptable_use_policy.md.pdf)).\n\n5. **Public Spaces:**\n   - Use a privacy screen and be aware of surroundings to prevent shoulder surfing. Avoid discussing confidential matters audibly ([Document 4](it/security/acceptable_use_policy.md.pdf), [Document 7](it/security/security_best_practices.md.pdf)).\n\n6. **Reporting and Compliance:**\n   - Report any lost or stolen devices, suspected security incidents, or unauthorized access immediately to IT Security ([Document 4](it/security/acceptable_use_policy.md.pdf)).\n   - Comply with local data laws when working internationally and report any security incidents ([Document 5](hr/remote-work/home_office_guidelines.md.pdf)).\n\nThese measures are designed to protect both the employee and the company from potential security threats while working remotely.\n\n---\n**source_documents:**\n- hr/remote-work/remote_work_policy.md.pdf\n- faqs/remote_work_faqs.md.pdf\n- it/security/acceptable_use_policy.md.pdf\n- it/security/security_best_practices.md.pdf\n\n**relevant_sections:**\n- Security Best Practices for Remote Workers\n- Remote Work Security Requirements\n- Network Security\n- Device Security",
       "source_documents": [
+        "hr/remote-work/remote_work_policy.md.pdf",
         "faqs/remote_work_faqs.md.pdf",
         "it/security/acceptable_use_policy.md.pdf",
         "it/security/security_best_practices.md.pdf"
       ],
       "relevant_sections": [
-        "Security",
+        "Security Best Practices for Remote Workers",
         "Remote Work Security Requirements",
-        "Security Best Practices for Employees"
+        "Network Security",
+        "Device Security"
       ],
       "expected_sources": [
         "it/hardware/laptop_provisioning.md.pdf",
@@ -203,24 +203,23 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "medium",
-      "latency_ms": 8414.711952209473,
+      "latency_ms": 18791.794061660767,
       "difficulty": "hard",
       "category": "it"
     },
     {
       "id": "Q007",
       "question": "What is the complete exit process when an employee resigns, including all HR, IT, and administrative steps?",
-      "answer": "The complete exit process when an employee resigns at NovaTech involves several steps across HR, IT, and administrative functions. Here is a detailed breakdown:\n\n### HR Responsibilities\n\n1. **Upon Resignation Receipt:**\n   - Confirm resignation in writing.\n   - Send the offboarding packet to the employee.\n   - Calculate final pay and PTO payout.\n   - Schedule an exit interview.\n   - Notify the benefits administrator and payroll.\n\n2. **During Notice Period:**\n   - Conduct the exit interview.\n   - Process benefits continuation (COBRA).\n   - Update HRIS records.\n   - Coordinate with IT on access removal.\n   - Prepare the final paycheck.\n\n3. **On the Last Day:**\n   - Process final pay.\n   - Confirm benefits termination.\n   - Complete exit paperwork.\n   - Collect company property.\n   - Remind the employee of ongoing obligations (e.g., NDA).\n\n4. **Post-Departure:**\n   - Send the final pay stub.\n   - Process 401(k) information.\n   - Send COBRA information.\n   - Update alumni records.\n   - Close out the employee file.\n\n### IT Responsibilities\n\n1. **Notification Received:**\n   - Acknowledge the offboarding request.\n   - Review access and systems.\n   - Schedule access revocation.\n\n2. **Final Day (or as specified):**\n   - Deactivate Okta account and other access (Google Workspace, Slack, VPN, cloud services, GitHub, etc.).\n   - Remove from internal tools and distribution lists.\n   - Send a return shipping label for equipment.\n   - Track equipment return and wipe returned devices.\n   - Update asset inventory.\n\n3. **Post-Departure:**\n   - Verify all access is removed.\n   - Archive email if required.\n   - Transfer file ownership.\n   - Update documentation ownership.\n\n### Departing Employee Responsibilities\n\n1. **First Week:**\n   - Submit written resignation to the manager.\n   - Complete the exit survey.\n   - Begin knowledge transfer documentation.\n   - List all projects and responsibilities.\n   - Identify key contacts and stakeholders.\n\n2. **During Notice Period:**\n   - Document processes and procedures.\n   - Train replacement or team members.\n   - Complete handoff meetings.\n   - Finish critical projects.\n   - Update documentation.\n\n3. **Final Week:**\n   - Complete all transitions.\n   - Return company equipment.\n   - Delete personal files from company devices.\n   - Update personal contact info with HR.\n   - Complete the exit interview.\n   - Submit final expenses.\n   - Set out-of-office message.\n   - Say goodbye to colleagues.\n\n4. **Final Day:**\n   - Return all company property.\n   - Turn in badge/keys (if applicable).\n   - Confirm final paycheck details.\n   - Sign any required documents.\n   - Collect personal belongings.\n\n### Additional Steps\n\n- **Exit Interview:** Conducted by HR, focusing on feedback about the employee's experience, reasons for leaving, and suggestions for improvement. Participation is voluntary, and confidentiality is maintained.\n\n- **Equipment Return:** Employees must return all company equipment, which is tracked and confirmed by IT.\n\n- **Final Pay and Benefits:** Final paycheck includes salary through the last day, accrued PTO, and any applicable reimbursements. Benefits like health insurance can continue under COBRA.\n\nThis process ensures a smooth transition and maintains security and compliance for NovaTech.\n\n---\n**source_documents:**\n- hr/onboarding-offboarding/offboarding_checklist.md.pdf\n- hr/onboarding-offboarding/exit_interview_process.md.pdf\n- it/account-access/offboarding_account_procedures.md.pdf\n\n**relevant_sections:**\n- HR Checklist\n- IT Checklist\n- Departing Employee Checklist\n- Exit Interview Process",
+      "answer": "The complete exit process when an employee resigns at NovaTech involves several steps across HR, IT, and administrative functions. Here is a detailed breakdown:\n\n### HR Steps\n\n1. **Resignation Received:**\n   - Confirm resignation in writing.\n   - Send offboarding packet to the employee.\n   - Calculate final pay and PTO payout.\n   - Schedule an exit interview.\n   - Notify the benefits administrator and payroll.\n\n2. **During Notice Period:**\n   - Conduct the exit interview.\n   - Process benefits continuation (COBRA).\n   - Update HRIS records.\n   - Coordinate with IT on access removal.\n   - Prepare the final paycheck.\n\n3. **Last Day:**\n   - Process final pay.\n   - Confirm benefits termination.\n   - Complete exit paperwork.\n   - Collect company property.\n   - Remind the employee of ongoing obligations (e.g., NDA).\n\n4. **Post-Departure:**\n   - Send the final pay stub.\n   - Process 401(k) information.\n   - Send COBRA information.\n   - Update alumni records.\n   - Close out the employee file.\n\n### IT Steps\n\n1. **Notification Received:**\n   - Acknowledge the offboarding request.\n   - Review access and systems.\n   - Schedule access revocation.\n\n2. **Final Day (or as specified):**\n   - Deactivate Okta account.\n   - Deactivate Google Workspace.\n   - Remove from Slack, VPN, cloud access (AWS, GCP), GitHub, and internal tools.\n   - Remove from distribution lists.\n\n3. **Equipment:**\n   - Send return shipping label.\n   - Track equipment return.\n   - Wipe returned devices.\n   - Update asset inventory.\n   - Confirm all equipment received.\n\n4. **Post-Departure:**\n   - Verify all access removed.\n   - Archive email (if required).\n   - Transfer file ownership.\n   - Update documentation ownership.\n\n### Departing Employee Steps\n\n1. **First Week:**\n   - Submit written resignation to the manager.\n   - Complete exit survey.\n   - Begin knowledge transfer documentation.\n   - List all projects and responsibilities.\n   - Identify key contacts and stakeholders.\n\n2. **During Notice Period:**\n   - Document processes and procedures.\n   - Train replacement or team members.\n   - Complete handoff meetings.\n   - Finish critical projects.\n   - Update documentation.\n\n3. **Final Week:**\n   - Complete all transitions.\n   - Return company equipment.\n   - Delete personal files from company devices.\n   - Update personal contact info with HR.\n   - Complete exit interview.\n   - Submit final expenses.\n   - Set out-of-office message.\n   - Say goodbye to colleagues.\n\n4. **Final Day:**\n   - Return all company property.\n   - Turn in badge/keys (if applicable).\n   - Confirm final paycheck details.\n   - Sign any required documents.\n   - Collect personal belongings.\n\n### Additional Considerations\n\n- **Exit Interview:** Conducted by HR, focusing on feedback about the employee's experience, reasons for leaving, and suggestions for improvement. Participation is voluntary and confidential.\n\n- **Knowledge Transfer:** Documentation and handoff meetings are crucial to ensure a smooth transition of responsibilities.\n\n- **Equipment Return:** Employees must return all company equipment, and IT will handle the secure wiping and inventory update.\n\nThis comprehensive process ensures a smooth transition for both the departing employee and the company.\n\n---\n**source_documents:**\n- hr/onboarding-offboarding/offboarding_checklist.md.pdf\n- hr/onboarding-offboarding/exit_interview_process.md.pdf\n- it/account-access/offboarding_account_procedures.md.pdf\n\n**relevant_sections:**\n- Employee Offboarding Checklist\n- Exit Interview Process\n- Employee Offboarding - Account Procedures",
       "source_documents": [
         "hr/onboarding-offboarding/offboarding_checklist.md.pdf",
         "hr/onboarding-offboarding/exit_interview_process.md.pdf",
         "it/account-access/offboarding_account_procedures.md.pdf"
       ],
       "relevant_sections": [
-        "HR Checklist",
-        "IT Checklist",
-        "Departing Employee Checklist",
-        "Exit Interview Process"
+        "Employee Offboarding Checklist",
+        "Exit Interview Process",
+        "Employee Offboarding - Account Procedures"
       ],
       "expected_sources": [
         "hr/onboarding-offboarding/exit_interview_process.md.pdf",
@@ -238,14 +237,14 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "medium",
-      "latency_ms": 10068.479061126709,
+      "latency_ms": 23604.928731918335,
       "difficulty": "hard",
       "category": "hr"
     },
     {
       "id": "Q008",
       "question": "How many total paid days off does a US L4 employee get in their first year, combining all leave types?",
-      "answer": "To determine the total paid days off for a US L4 employee in their first year, we need to consider the following leave types:\n\n1. **Annual Leave**: \n   - An L4 employee (Senior IC / Manager) is entitled to 25 days of annual leave per year [Document 1].\n\n2. **Sick Leave**:\n   - All US employees are entitled to 15 days of paid sick leave per year, which includes 10 days for personal illness/injury and 5 days for family care [Document 5].\n\nCombining these, a US L4 employee would have a total of:\n\n- **Annual Leave**: 25 days\n- **Sick Leave**: 15 days\n\n**Total Paid Days Off**: 25 (Annual Leave) + 15 (Sick Leave) = 40 days\n\nThis total assumes that the employee utilizes all their sick leave and annual leave entitlements within the year.\n\n---\n**source_documents:**\n- hr/leave/annual_leave_policy.md.pdf\n- hr/leave/sick_leave_policy.md.pdf\n\n**relevant_sections:**\n- Annual Leave Entitlements\n- Sick Leave Entitlements",
+      "answer": "To determine the total paid days off for a US L4 employee in their first year, we need to consider the following types of leave:\n\n1. **Annual Leave**: \n   - An L4 employee (Senior IC / Manager) is entitled to 25 days of annual leave per year. [Document 1, Annual Leave Entitlements]\n\n2. **Sick Leave**:\n   - All US employees receive 15 days of paid sick leave per calendar year. This includes 10 days for personal illness/injury and 5 days for family care. [Document 5, Sick Leave Entitlements]\n\nCombining these, a US L4 employee would have a total of:\n\n- **Annual Leave**: 25 days\n- **Sick Leave**: 15 days\n\nThus, the total paid days off for a US L4 employee in their first year is **40 days**.\n\n---\n**source_documents:**\n- hr/leave/annual_leave_policy.md.pdf\n- hr/leave/sick_leave_policy.md.pdf\n\n**relevant_sections:**\n- Annual Leave Entitlements\n- Sick Leave Entitlements",
       "source_documents": [
         "hr/leave/annual_leave_policy.md.pdf",
         "hr/leave/sick_leave_policy.md.pdf"
@@ -264,20 +263,20 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "low",
-      "latency_ms": 7035.693168640137,
+      "latency_ms": 12148.03671836853,
       "difficulty": "medium",
       "category": "hr"
     },
     {
       "id": "Q009",
       "question": "If an L3 employee uses the full Learning & Development budget on a conference ($1,500 limit) and technical books, how much would they have left for professional journals?",
-      "answer": "To determine how much an L3 employee would have left for professional journals after using the Learning & Development (L&D) budget on a conference and technical books, we need to consider the limits for each category:\n\n1. **Conference**: The L&D budget allows for up to $1,500 per event for industry conferences. If the employee uses the full $1,500 for a conference, this amount is deducted from the total L&D budget.\n\n2. **Technical Books**: The budget allows for up to $500 per year for technical books.\n\n3. **Professional Journals**: The budget allows for up to $200 per year for professional journals.\n\nThe total annual L&D budget is $2,500. If the employee uses $1,500 for a conference and $500 for technical books, they would have:\n\n- Total spent: $1,500 (conference) + $500 (technical books) = $2,000\n- Remaining budget: $2,500 (total budget) - $2,000 (spent) = $500\n\nSince the limit for professional journals is $200 per year, the employee would have enough remaining budget to cover the full $200 for professional journals.\n\nTherefore, after using the budget for a conference and technical books, the employee would have $200 left for professional journals.\n\n---\n**source_documents:**\n- communications/policy-announcements/learning_development_budget_2024.md.pdf\n\n**relevant_sections:**\n- Eligible Expenses\n- Conference Attendance",
+      "answer": "To determine how much an L3 employee would have left for professional journals after using the Learning & Development (L&D) budget on a conference and technical books, we need to consider the specific limits for each category:\n\n1. **Conference**: The L&D budget allows up to $1,500 per event for industry conferences (source: Document 1, \"Eligible Expenses\" section).\n2. **Technical Books**: The budget allows up to $500 per year for technical books (source: Document 1, \"Books & Materials\" section).\n\nThe total L&D budget per employee is $2,500 annually (source: Document 1, \"Budget Amount\" section).\n\nCalculating the remaining budget:\n- Total L&D budget: $2,500\n- Conference expense: $1,500\n- Technical books expense: $500\n\nRemaining budget = $2,500 - $1,500 - $500 = $500\n\nThe limit for professional journals is $200 per year (source: Document 1, \"Books & Materials\" section). Since the remaining budget is $500, the employee would have enough to cover the full $200 for professional journals.\n\nTherefore, after attending a conference and purchasing technical books, the employee would have $500 left, which is sufficient to cover the $200 limit for professional journals.\n\n---\n**source_documents:**\n- communications/policy-announcements/learning_development_budget_2024.md.pdf\n\n**relevant_sections:**\n- Eligible Expenses\n- Budget Amount",
       "source_documents": [
         "communications/policy-announcements/learning_development_budget_2024.md.pdf"
       ],
       "relevant_sections": [
         "Eligible Expenses",
-        "Conference Attendance"
+        "Budget Amount"
       ],
       "expected_sources": [
         "hr/career-development/learning_development_budget.md.pdf"
@@ -288,20 +287,20 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "medium",
-      "latency_ms": 6433.786869049072,
+      "latency_ms": 12637.768268585205,
       "difficulty": "easy",
       "category": "hr"
     },
     {
       "id": "Q010",
       "question": "An employee chose the HDHP health plan. If they have a family and hit their out-of-pocket maximum, what is the total maximum they would pay in a year (premiums + out-of-pocket)?",
-      "answer": "To calculate the total maximum amount an employee would pay in a year under the HDHP health plan, including both premiums and out-of-pocket costs, follow these steps:\n\n1. **Annual Premiums for Family Coverage:**\n   - Monthly Premium for Family: $225\n   - Annual Premium = $225 x 12 months = $2,700\n\n2. **Out-of-Pocket Maximum for Family:**\n   - Out-of-Pocket Max (Family) = $14,100\n\n3. **Total Maximum Cost:**\n   - Total Maximum = Annual Premium + Out-of-Pocket Max\n   - Total Maximum = $2,700 + $14,100 = $16,800\n\nTherefore, the total maximum an employee would pay in a year for the HDHP health plan with family coverage, if they hit their out-of-pocket maximum, is $16,800.\n\n---\n**source_documents:**\n- hr/compensation/health_insurance_us.md.pdf\n\n**relevant_sections:**\n- Plan Options\n- Out-of-Pocket Max (Family)",
+      "answer": "To calculate the total maximum amount an employee would pay in a year under the HDHP health plan for a family, we need to consider both the annual premiums and the out-of-pocket maximum.\n\n1. **Monthly Premium for Family**: $225\n   - Annual Premium: $225 x 12 months = $2,700\n\n2. **Out-of-Pocket Maximum for Family**: $14,100\n\n3. **Total Maximum Payment**: \n   - Total = Annual Premium + Out-of-Pocket Maximum\n   - Total = $2,700 + $14,100 = $16,800\n\nTherefore, the total maximum an employee would pay in a year for the HDHP health plan with a family, if they hit their out-of-pocket maximum, is $16,800.\n\n---\n**source_documents:**\n- hr/compensation/health_insurance_us.md.pdf\n\n**relevant_sections:**\n- Plan Options\n- Costs and Deductions",
       "source_documents": [
         "hr/compensation/health_insurance_us.md.pdf"
       ],
       "relevant_sections": [
         "Plan Options",
-        "Out-of-Pocket Max (Family)"
+        "Costs and Deductions"
       ],
       "expected_sources": [
         "hr/compensation/health_insurance_us.md.pdf"
@@ -313,7 +312,7 @@
       ],
       "chunks_retrieved": 8,
       "confidence": "low",
-      "latency_ms": 5286.442995071411,
+      "latency_ms": 12546.99683189392,
       "difficulty": "medium",
       "category": "hr"
     }

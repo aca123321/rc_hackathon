@@ -150,6 +150,184 @@ def retrieve_top_k(
         conn.close()
 
 
+def retrieve_by_keywords(
+    query: str,
+    *,
+    min_chunks: int = 1,
+    max_chunks: int = 3,
+) -> list[RetrievedChunk]:
+    """
+    Retrieve chunks using partial keyword matching.
+
+    Extracts significant keywords from the query and searches for chunks
+    containing those keywords. Useful for catching documents that might
+    not score high on semantic similarity but contain exact terms.
+
+    Args:
+        query: The natural language query to extract keywords from.
+        min_chunks: Minimum number of chunks to return (if available).
+        max_chunks: Maximum number of chunks to return.
+
+    Returns:
+        List of RetrievedChunk objects matching keywords.
+    """
+    # Extract keywords (words > 3 chars, excluding common stop words)
+    stop_words = {
+        "what",
+        "when",
+        "where",
+        "which",
+        "who",
+        "whom",
+        "this",
+        "that",
+        "these",
+        "those",
+        "there",
+        "here",
+        "have",
+        "has",
+        "had",
+        "been",
+        "being",
+        "will",
+        "would",
+        "could",
+        "should",
+        "does",
+        "doing",
+        "about",
+        "above",
+        "after",
+        "again",
+        "against",
+        "with",
+        "from",
+        "into",
+        "through",
+        "during",
+        "before",
+        "between",
+        "under",
+        "over",
+        "your",
+        "their",
+        "more",
+        "most",
+        "other",
+        "some",
+        "such",
+        "only",
+        "same",
+        "than",
+        "very",
+        "just",
+        "also",
+        "know",
+        "tell",
+        "many",
+        "much",
+        "want",
+        "need",
+        "like",
+        "make",
+        "made",
+        "come",
+        "came",
+        "going",
+        "give",
+        "gave",
+        "take",
+        "took",
+        "find",
+        "found",
+        "leave",
+    }
+
+    # Extract meaningful keywords
+    words = query.lower().split()
+    keywords = [
+        w.strip("?.,!\"'-") for w in words if len(w) > 3 and w.lower() not in stop_words
+    ]
+
+    if not keywords:
+        logger.info("No significant keywords extracted from query")
+        return []
+
+    logger.info(f"Keyword search with terms: {keywords[:5]}")
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    try:
+        # Build OR conditions for partial matching on each keyword
+        conditions = []
+        params = []
+        for keyword in keywords[:5]:  # Limit to top 5 keywords
+            conditions.append("LOWER(text) LIKE %s")
+            params.append(f"%{keyword}%")
+
+        where_clause = " OR ".join(conditions)
+
+        # Query with keyword matching, ordered by number of matches
+        cursor.execute(
+            f"""
+            SELECT 
+                id,
+                text,
+                source_file,
+                0.5 as similarity,  -- Fixed score for keyword matches
+                num_words,
+                text_length,
+                (
+                    {' + '.join([f"CASE WHEN LOWER(text) LIKE %s THEN 1 ELSE 0 END" for _ in keywords[:5]])}
+                ) as match_count
+            FROM knowledge_base
+            WHERE {where_clause}
+            ORDER BY match_count DESC, text_length ASC
+            LIMIT %s
+            """,
+            params
+            + [f"%{k}%" for k in keywords[:5]]
+            + [max_chunks * 2],  # Fetch extra for filtering
+        )
+
+        results = cursor.fetchall()
+        logger.info(f"Keyword search returned {len(results)} results")
+
+        chunks = []
+        seen_sources = set()
+        for row in results:
+            # Limit to 1 chunk per source for diversity
+            source = row[2] or "unknown"
+            if source in seen_sources:
+                continue
+            seen_sources.add(source)
+
+            chunk = RetrievedChunk(
+                id=row[0],
+                text=row[1],
+                source_file=source,
+                similarity_score=float(row[3]),
+                num_words=row[4],
+                text_length=row[5],
+            )
+            chunks.append(chunk)
+
+            if len(chunks) >= max_chunks:
+                break
+
+        # Ensure we return at least min_chunks if available
+        if len(chunks) < min_chunks and results:
+            logger.info(f"Keyword search: got {len(chunks)} chunks (min: {min_chunks})")
+
+        return chunks
+
+    finally:
+        cursor.close()
+        conn.close()
+
+
 def retrieve_with_deduplication(
     query: str,
     *,
@@ -172,18 +350,32 @@ def retrieve_with_deduplication(
     Returns:
         List of RetrievedChunk objects with source diversity.
     """
-    # Retrieve more than top_k to allow for filtering
-    fetch_multiplier = 2  # Fetch 3x to have room for deduplication
+    # Retrieve more than top_k to allow for filtering and diversity
+    fetch_multiplier = 3  # Fetch 4x to have room for deduplication and filtering
+    logger.info(f"Retrieval query: {query[:150]}...")
     candidates = retrieve_top_k(
         query,
-        top_k=top_k * fetch_multiplier,
+        top_k=max(top_k * fetch_multiplier, 20),  # Ensure minimum 20 candidates
         similarity_threshold=similarity_threshold,
     )
+
+    # Also perform keyword search for partial matches (1-3 chunks)
+    keyword_chunks = retrieve_by_keywords(query, min_chunks=1, max_chunks=3)
+    logger.info(f"Keyword search added {len(keyword_chunks)} chunks")
+
+    # Merge keyword results with vector results (deduplicate by id)
+    existing_ids = {c.id for c in candidates}
+    for kw_chunk in keyword_chunks:
+        if kw_chunk.id not in existing_ids:
+            candidates.append(kw_chunk)
+            existing_ids.add(kw_chunk.id)
+            logger.info(f"Added keyword match from: {kw_chunk.source_file}")
 
     # Apply source diversity constraint
     source_counts: dict[str, int] = {}
     diverse_chunks: list[RetrievedChunk] = []
 
+    # First pass: add vector search results (higher quality)
     for chunk in candidates:
         source = chunk.source_file
         current_count = source_counts.get(source, 0)
